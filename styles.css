@@ -26,7 +26,7 @@ h3 {
 /* Styles the page's top section, including navigation and logo */
 header {
   position: relative; /* Enables positioning of child elements within the header */
-  background-image: url("/images/festival-techno-la-teste-banniere.jpg"); /* Adds a banner image */
+  background-image: url("./images/bonobo.jpg"); /* Adds a banner image */
   background-size: cover; /* Ensures the image covers the entire header */
   background-position: center; /* Centers the image */
   height: 300px; /* Fixed height for the header */
