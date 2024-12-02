@@ -42,3 +42,12 @@ reserveButton.addEventListener("click", (event) => {
   // Play the sound when the button is clicked
   clickSound.play();
 });
+// Sélectionner le bouton hamburger et la liste de navigation
+const menuToggle = document.getElementById("menu-toggle");
+const navList = document.getElementById("nav-list");
+
+// Ajouter un événement pour activer/désactiver le menu
+menuToggle.addEventListener("click", () => {
+  navList.classList.toggle("active");
+  menuToggle.classList.toggle("active");
+});
