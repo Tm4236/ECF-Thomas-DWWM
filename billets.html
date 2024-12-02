@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billetterie | Festival Électro</title>
+    <link rel="stylesheet" href="billets.css" />
+    <script defer src="script.js"></script>
+    <link rel="icon" href="/images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Header section with the logo and navigation menu -->
+    <header class="header">
+      <div class="container">
+        <!-- Navigation bar -->
+        <nav class="navbar">
+          <ul>
+            <!-- Navigation links -->
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="program.html">Programmation</a></li>
+            <li><a href="billets.html">Billetterie</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="ticket-section">
+      <div class="container">
+        <h2>Achetez vos billets</h2>
+        <p>
+          Choisissez votre billet pour profiter des concerts électro
+          incontournables !
+        </p>
+        <div class="ticket-options">
+          <!-- Artiste 1 -->
+          <div
+            class="ticket-option"
+            style="background-image: url('/images/impératrice.jpg')"
+          >
+            <div class="ticket-info">
+              <h3>L'Impératrice</h3>
+              <p>15 juin 2025, 19:00</p>
+              <p class="price">38€</p>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 90%"></div>
+              </div>
+              <button
+                class="buy-btn"
+                onclick="acheterPlace('L\'Impératrice', 38)"
+              >
+                Acheter
+              </button>
+              <p class="description">
+                L'impératrice est un groupe français aux influences disco, pop
+                et funk. Leur musique mêle des rythmes entraînants avec des
+                sonorités nostalgiques.
+              </p>
+            </div>
+          </div>
+          <!-- Artiste 2 -->
+          <div
+            class="ticket-option"
+            style="background-image: url('/images/Kavinsky_2.jpg')"
+          >
+            <div class="ticket-info">
+              <h3>Kavinsky</h3>
+              <p>15 juin 2025, 21:30</p>
+              <p class="price">45€</p>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 100%"></div>
+              </div>
+              <button class="buy-btn" onclick="acheterPlace('Kavinsky', 45)">
+                Acheter
+              </button>
+              <p class="description">
+                Kavinsky, connu pour son hit 'Nightcall', est un artiste
+                français de musique électronique. Sa musique est associée à la
+                synthwave.
+              </p>
+            </div>
+          </div>
+          <!-- Artiste 3 -->
+          <div
+            class="ticket-option"
+            style="background-image: url('/images/m83.jpg')"
+          >
+            <div class="ticket-info">
+              <h3>M83</h3>
+              <p>16 juin 2025, 19:00</p>
+              <p class="price">32€</p>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 60%"></div>
+              </div>
+              <button class="buy-btn" onclick="acheterPlace('M83', 32)">
+                Acheter
+              </button>
+              <p class="description">
+                M83 crée des paysages sonores épiques et émotionnels, combinant
+                synthétiseurs et sons atmosphériques.
+              </p>
+            </div>
+          </div>
+          <!-- Artiste 4 -->
+          <div
+            class="ticket-option"
+            style="background-image: url('/images/wax\ tailor.jpg')"
+          >
+            <div class="ticket-info">
+              <h3>Wax Tailor</h3>
+              <p>16 juin 2025, 22:00</p>
+              <p class="price">29€</p>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 35%"></div>
+              </div>
+              <button class="buy-btn" onclick="acheterPlace('Wax Tailor', 29)">
+                Acheter
+              </button>
+              <p class="description">
+                Wax Tailor mélange des samples vintage avec des rythmes
+                modernes, créant une musique cinématographique.
+              </p>
+            </div>
+          </div>
+          <!-- Artiste 5 -->
+          <div
+            class="ticket-option"
+            style="background-image: url('/images/bonobo.jpg')"
+          >
+            <div class="ticket-info">
+              <h3>Bonobo</h3>
+              <p>17 juin 2025, 20:30</p>
+              <p class="price">50€</p>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 78%"></div>
+              </div>
+              <button class="buy-btn" onclick="acheterPlace('Bonobo', 50)">
+                Acheter
+              </button>
+              <p class="description">
+                Bonobo crée des morceaux atmosphériques influencés par le jazz,
+                le trip-hop et les musiques du monde.
+              </p>
+            </div>
+          </div>
+          <!-- Artiste 6 -->
+          <div
+            class="ticket-option"
+            style="background-image: url('/images/chinese\ Man.jpg')"
+          >
+            <div class="ticket-info">
+              <h3>Chinese Man</h3>
+              <p>17 juin 2025, 22:00</p>
+              <p class="price">27€</p>
+              <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 64%"></div>
+              </div>
+              <button class="buy-btn" onclick="acheterPlace('Chinese Man', 27)">
+                Acheter
+              </button>
+              <p class="description">
+                Chinese Man mélange influences reggae, jazz et beats puissants
+                pour une expérience musicale riche.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 Festival Électro. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

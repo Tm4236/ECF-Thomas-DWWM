@@ -1,0 +1,246 @@
+/* General Styles */
+/* Global styles for the webpage */
+body {
+  font-family: Arial, sans-serif; /* Sets a clean sans-serif font for the entire page */
+  margin: 0; /* Removes default margin for consistent layout */
+  padding: 0; /* Removes default padding */
+  background-color: #2e2a39; /* Sets a dark background color for a modern look */
+  color: #e8ffff; /* Sets a light text color for readability on a dark background */
+}
+
+/* Centered container with responsive width */
+.container {
+  width: 90%; /* The container takes 90% of the viewport width */
+  margin: 0 auto; /* Centers the container horizontally */
+}
+
+/* Heading elements (h1, h2, h3) */
+/* Ensures consistent spacing for all headings */
+h1,
+h2,
+h3 {
+  margin: 0; /* Removes default margin for better control */
+}
+
+/* Header */
+/* Styles the page's top section, including navigation and logo */
+header {
+  position: relative; /* Enables positioning of child elements within the header */
+  background-image: url("/images/festival-techno-la-teste-banniere.jpg"); /* Adds a banner image */
+  background-size: cover; /* Ensures the image covers the entire header */
+  background-position: center; /* Centers the image */
+  height: 300px; /* Fixed height for the header */
+}
+
+/* Logo inside the header */
+/* Applies animation to the logo for visual interest */
+header .logo img {
+  width: auto; /* Automatically adjusts the width based on the height */
+  height: 90px; /* Fixed height for the logo */
+  animation: rotation 5s infinite linear; /* Rotates the logo continuously */
+  position: absolute; /* Allows precise placement of the logo */
+  top: 50%; /* Centers the logo vertically within the header */
+  left: 50%; /* Centers the logo horizontally */
+  transform: translate(-50%, -50%); /* Ensures exact centering */
+}
+
+/* Navigation bar within the header */
+header .navbar ul {
+  display: flex; /* Aligns navigation links horizontally */
+  justify-content: center; /* Centers the navigation menu */
+  align-items: center; /* Vertically aligns items in the menu */
+  list-style: none; /* Removes default bullet points */
+  padding: 0; /* Removes default padding */
+}
+
+/* Navigation links */
+header .navbar ul li {
+  margin: 0 20px; /* Adds spacing between menu items */
+}
+
+header .navbar a {
+  color: #fff; /* White text for contrast */
+  text-decoration: none; /* Removes underline for a clean look */
+  font-size: 1.4rem; /* Sets a larger font size for readability */
+  padding: 12px 25px; /* Adds padding for better clickability */
+  border-radius: 50px; /* Rounds the button edges */
+  background-color: #fd55b7; /* Vibrant pink background for visibility */
+  transition: background-color 0.3s ease; /* Smooth background-color transition */
+  display: inline-block; /* Ensures proper block-level button styling */
+}
+
+/* Hover state for navigation links */
+header .navbar a:hover {
+  background-color: #83feff; /* Changes to a light blue on hover */
+  color: #2e2a39; /* Adjusts text color for contrast */
+  transform: translateY(-5px); /* Creates a lift effect */
+}
+
+/* Active state for navigation links */
+header .navbar a:active {
+  transform: translateY(0); /* Resets the lift effect */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds subtle shadow for depth */
+}
+
+/* Hero Section */
+/* Centralized introduction area for the page */
+.hero {
+  position: relative; /* Enables absolute positioning of child elements */
+  text-align: center; /* Centers text within the hero section */
+}
+
+/* Carousel container */
+/* Wraps the carousel images for scrolling effect */
+.carousel-container {
+  position: relative; /* Ensures elements like buttons stay within the container */
+  overflow: hidden; /* Hides overflowing content for smooth scrolling */
+  width: 100%; /* Takes up the full width of the viewport */
+}
+
+/* Carousel wrapper */
+/* Contains all carousel images */
+.carousel {
+  display: flex; /* Aligns images horizontally */
+  width: 300%; /* Total width (3 times the width of one image) */
+  animation: slide 15s ease-in-out infinite; /* Smooth scrolling animation */
+}
+
+/* Carousel images */
+/* Styles individual images in the carousel */
+.carousel-image {
+  width: 100vw; /* Each image occupies the full viewport width */
+  height: 100vh; /* Each image occupies the full viewport height */
+  object-fit: cover; /* Scales image to cover the entire area without distortion */
+  opacity: 0.6; /* Slight transparency for blending with other elements */
+}
+
+/* Keyframe animation for sliding effect */
+@keyframes slide {
+  0% {
+    transform: translateX(0); /* Starts at the first image */
+  }
+  33% {
+    transform: translateX(-100vw); /* Moves to the second image */
+  }
+  67% {
+    transform: translateX(-200vw); /* Moves to the third image */
+  }
+  100% {
+    transform: translateX(0); /* Loops back to the first image */
+  }
+}
+
+/* Button inside the carousel */
+.carousel-button-container {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.hero .btn {
+  background-color: #fd55b7;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero .btn:hover {
+  background-color: #83feff;
+  color: #2e2a39;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero .btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Image sous le carousel (affiche carrée) */
+.festival-poster {
+  display: block;
+  margin: 40px auto;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.hero .container {
+  z-index: 1;
+  position: relative;
+}
+
+.hero h2 {
+  font-size: 2rem;
+}
+
+.hero p {
+  font-size: 1rem;
+}
+
+/* Artists Section */
+.artists {
+  background-color: #2e2a39;
+  padding: 40px 0;
+}
+
+.artists h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.artist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.artist-card {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: scale(1.05);
+}
+
+.artist-card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.artist-card h3 {
+  margin: 10px 0;
+}
+
+.artist-card p {
+  color: #fd55b7;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #fd55b7;
+  color: #2e2a39;
+  font-size: 0.9rem;
+}
+
+/* Keyframe Animations */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

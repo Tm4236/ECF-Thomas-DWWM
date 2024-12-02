@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <!-- Metadata and settings for the document -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electro Festival</title>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Defer loading of the JavaScript file to improve page performance -->
+    <script defer src="script.js"></script>
+    <link rel="icon" href="/images/favicon.png" type="image/png" />
+  </head>
+  <body>
+    <!-- Header section with the logo and navigation menu -->
+    <header class="header">
+      <div class="container">
+        <!-- Navigation bar -->
+        <nav class="navbar">
+          <ul>
+            <!-- Navigation links -->
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="program.html">Programmation</a></li>
+            <li><a href="billets.html">Billetterie</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Hero section showcasing the festival -->
+    <section class="hero">
+      <div class="carousel-container">
+        <div class="carousel">
+          <!-- Carousel images -->
+          <img
+            src="/images/festival.jpg"
+            alt="Image 1"
+            class="carousel-image"
+          />
+          <img
+            src="/images/festival2.jpg"
+            alt="Image 2"
+            class="carousel-image"
+          />
+          <img
+            src="/images/festival3.jpg"
+            alt="Image 3"
+            class="carousel-image"
+          />
+        </div>
+
+        <!-- Button inside the carousel -->
+        <div class="carousel-button-container">
+          <div class="container">
+            <!-- Main message and call-to-action -->
+            <h2>Un festival électrisant</h2>
+            <p>
+              Rejoignez-nous pour une expérience musicale unique avec les
+              meilleurs artistes électro du moment.
+            </p>
+          </div>
+          <!-- Ajout de l'ID pour la sélection du bouton -->
+          <a href="billets.html" class="btn btn-primary" id="reserve-button">
+            Réservez vos billets
+          </a>
+          <!-- Audio for hover sound= -->
+          <audio id="click-sound" src="loop.mp3" preload="auto"></audio>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image under the carousel, with space created between the sections -->
+    <img
+      src="/images/festival-techno-la-teste.jpg"
+      alt="Affiche Festival Electro"
+      class="festival-poster"
+    />
+
+    <!-- Featured artists section -->
+    <section class="artists">
+      <div class="container">
+        <!-- Section heading -->
+        <h2>Artistes en vedette</h2>
+        <div class="artist-grid">
+          <!-- Example of an artist card -->
+          <div class="artist-card">
+            <audio
+              id="audio-imp"
+              src="/LImpératrice — Anomalie bleue.mp3"
+            ></audio>
+            <!-- Audio clip for L'Impératrice -->
+            <img src="/images/impératrice.jpg" alt="L'impératrice" />
+            <h3>L'impératrice</h3>
+            <p>Disco Funk</p>
+          </div>
+          <div class="artist-card">
+            <audio
+              id="audio-kavinsky"
+              src="/Kavinsky - Nightcall (Drive Original Movie Soundtrack) (Official Audio).mp3"
+            ></audio>
+            <!-- Audio clip for Kavinsky -->
+            <img src="/images/Kavinsky_2.jpg" alt="Kavinsky" />
+            <h3>Kavinsky</h3>
+            <p>Synthwave</p>
+          </div>
+          <div class="artist-card">
+            <audio
+              id="audio-m83"
+              src="/M83 Midnight City Official video.mp3"
+            ></audio>
+            <!-- Audio clip for M83 -->
+            <img src="/images/m83.jpg" alt="M83" />
+            <h3>M83</h3>
+            <p>Electro Dream Pop</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer section with copyright notice -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Electro Festival. Tous droits réservés.</p>
+      </div>
+    </footer>
+  </body>
+</html>

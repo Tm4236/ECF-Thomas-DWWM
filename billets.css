@@ -1,0 +1,305 @@
+/* Variables de couleurs */
+:root {
+  --primary-color: #fd55b7; /* Couleur principale */
+  --secondary-color: #83feff; /* Couleur secondaire */
+  --dark-color: #2e2a39; /* Couleur sombre */
+  --light-color: #e8ffff; /* Couleur claire */
+  --background-color: #2e2a39; /* Couleur de fond */
+  --accent-color: #fd55b7; /* Couleur d'accent */
+}
+
+/* Corps de la page */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+  color: var(--light-color);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header and navigation */
+header {
+  background-color: #fd55b7; /* Header background color */
+  padding: 20px 0; /* Padding around header content */
+  position: sticky; /* Make header sticky at the top */
+  top: 0; /* Sticky header at the top of the page */
+  z-index: 1000; /* Ensure header stays on top of other content */
+}
+
+header .logo img {
+  max-width: 150px; /* Limit logo width */
+  margin-left: 20px; /* Add left margin to the logo */
+}
+
+header nav ul {
+  list-style: none; /* Remove default list styling */
+  display: flex; /* Use flexbox for navigation items */
+  justify-content: center; /* Center the navigation items */
+  align-items: center; /* Vertically align navigation items */
+}
+
+header nav ul li {
+  margin: 0 15px; /* Horizontal space between navigation items */
+}
+
+header nav ul li a {
+  color: #fff; /* White text for navigation links */
+  text-decoration: none; /* Remove underline from links */
+  font-weight: bold; /* Bold font for links */
+  padding: 10px 15px; /* Padding around links */
+  border-radius: 5px; /* Rounded corners for links */
+  transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+header nav ul li a.active,
+header nav ul li a:hover {
+  background-color: #83feff; /* Background color on hover or active state */
+  color: #2e2a39; /* Text color on hover or active state */
+}
+
+/* Mobile menu styles */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 20px; /* Réduction des barres */
+  height: 3px;
+  background-color: var(--light-color);
+  margin: 4px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(7px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-7px);
+}
+
+/* Section des tickets */
+.ticket-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.ticket-section h2 {
+  font-size: 3rem;
+  color: var(--light-color);
+  margin-bottom: 20px;
+}
+
+.ticket-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Carte des artistes */
+.ticket-option {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--light-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: calc(33.333% - 20px);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ticket-option:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.ticket-option::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Assombrir l'image de fond */
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.ticket-option:hover::after {
+  background: rgba(0, 0, 0, 0.3); /* Réduire l'assombrissement au survol */
+}
+
+.ticket-info {
+  position: relative;
+  z-index: 2;
+}
+
+.ticket-info h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.ticket-info p {
+  margin: 5px 0;
+}
+
+.ticket-info .progress-bar-container {
+  background: var(--light-color);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px 0;
+  height: 10px;
+}
+
+.ticket-info .progress-bar {
+  background: var(--primary-color);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Description au survol */
+.ticket-option .description {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.ticket-option:hover .description {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Ajout des styles pour le bouton d'achat */
+.ticket-option .buy-btn {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+}
+
+.ticket-option .buy-btn:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+/* Header */
+header {
+  position: relative;
+  background-image: url("/images/festival-techno-la-teste-banniere.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+
+header .logo img {
+  width: auto;
+  height: 90px;
+  animation: rotation 5s infinite linear;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+header .navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+header .navbar ul li {
+  margin: 0 20px;
+}
+
+header .navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 12px 25px;
+  border-radius: 50px;
+  background-color: #fd55b7;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+header .navbar a:hover {
+  background-color: #83feff;
+  color: #2e2a39;
+  transform: translateY(-5px);
+}
+
+header .navbar a:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with invisible element */
+    transform: translateY(20px); /* Slide element up */
+  }
+  to {
+    opacity: 1; /* Fully visible element */
+    transform: translateY(0); /* No transformation */
+  }
+}
+
+.hero h1,
+.hero p,
+.hero .btn {
+  animation: fadeIn 1s ease-in-out; /* Apply fade-in animation */
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0; /* Start invisible */
+    transform: translateX(100%); /* Slide in from right */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translateX(0); /* No translation */
+  }
+}
+
+.carousel-container .slide {
+  animation: slideIn 2s ease-out; /* Apply slide-in animation to carousel slides */
+}
+
+header .logo img {
+  width: auto; /* Automatically adjust width */
+  height: 90px; /* Set fixed height */
+  animation: rotation 5s infinite linear; /* Infinite rotation animation */
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg); /* Start at 0 degrees */
+  }
+  to {
+    transform: rotate(360deg); /* Rotate to 360 degrees */
+  }
+}
