@@ -20,38 +20,38 @@ body {
 
 /* Header and navigation */
 header {
-  background-color: #fd55b7; /* Header background color */
-  padding: 20px 0; /* Padding around header content */
-  position: sticky; /* Make header sticky at the top */
-  top: 0; /* Sticky header at the top of the page */
-  z-index: 1000; /* Ensure header stays on top of other content */
+  background-color: var(--primary-color); /* Header background color */
+  padding: 20px 0; /* Padding autour du contenu du header */
+  position: sticky; /* Sticky header */
+  top: 0; /* Fixed at the top */
+  z-index: 1000; /* Ensure header stays above other content */
 
   .logo img {
-    max-width: 150px; /* Limit logo width */
-    margin-left: 20px; /* Add left margin to the logo */
+    max-width: 150px;
+    margin-left: 20px;
   }
 
   nav ul {
-    list-style: none; /* Remove default list styling */
-    display: flex; /* Use flexbox for navigation items */
-    justify-content: center; /* Center the navigation items */
-    align-items: center; /* Vertically align navigation items */
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     li {
-      margin: 0 15px; /* Horizontal space between navigation items */
+      margin: 0 15px;
 
       a {
-        color: #fff; /* White text for navigation links */
-        text-decoration: none; /* Remove underline from links */
-        font-weight: bold; /* Bold font for links */
-        padding: 10px 15px; /* Padding around links */
-        border-radius: 5px; /* Rounded corners for links */
-        transition: background-color 0.3s; /* Smooth transition on hover */
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
 
         &.active,
         &:hover {
-          background-color: #83feff; /* Background color on hover or active state */
-          color: #2e2a39; /* Text color on hover or active state */
+          background-color: var(--secondary-color);
+          color: var(--dark-color);
         }
       }
     }
@@ -62,7 +62,7 @@ header {
     cursor: pointer;
 
     .bar {
-      width: 20px; /* Réduction des barres */
+      width: 20px;
       height: 3px;
       background-color: var(--light-color);
       margin: 4px;
@@ -74,11 +74,9 @@ header {
       .bar:nth-child(1) {
         transform: rotate(45deg) translateY(7px);
       }
-
       .bar:nth-child(2) {
         opacity: 0;
       }
-
       .bar:nth-child(3) {
         transform: rotate(-45deg) translateY(-7px);
       }
@@ -126,12 +124,7 @@ header {
       box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
 
       &::after {
-        background: rgba(
-          0,
-          0,
-          0,
-          0.3
-        ); /* Réduire l'assombrissement au survol */
+        background: rgba(0, 0, 0, 0.3);
       }
 
       .description {
@@ -147,7 +140,7 @@ header {
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6); /* Assombrir l'image de fond */
+      background: rgba(0, 0, 0, 0.6);
       z-index: 1;
       transition: background 0.3s ease;
     }

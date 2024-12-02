@@ -49,24 +49,26 @@ h3 {
 }
 
 /* Header */
-header {
+.header {
   position: relative;
   background-image: url("./images/festival-techno-la-teste-banniere.jpg");
   background-size: cover;
   background-position: center;
   height: 300px;
 
-  .logo img {
-    width: auto;
-    height: 90px;
-    animation: rotation 5s infinite linear;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  &__logo {
+    img {
+      width: auto;
+      height: 90px;
+      animation: rotation 5s infinite linear;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
-  .navbar {
+  &__nav {
     ul {
       display: flex;
       justify-content: center;
@@ -74,11 +76,11 @@ header {
       list-style: none;
       padding: 0;
 
-      li {
+      &__item {
         margin: 0 20px;
       }
 
-      a {
+      &__link {
         @include button($primary-color, #fff);
         @include transition(background-color);
         &:hover {
@@ -100,18 +102,18 @@ header {
   position: relative;
   text-align: center;
 
-  .carousel-container {
+  &__carousel-container {
     position: relative;
     overflow: hidden;
     width: 100%;
   }
 
-  .carousel {
+  &__carousel {
     display: flex;
     width: 300%;
     animation: slide 15s ease-in-out infinite;
 
-    .carousel-image {
+    &__image {
       width: 100vw;
       height: 100vh;
       object-fit: cover;
@@ -119,7 +121,7 @@ header {
     }
   }
 
-  .carousel-button-container {
+  &__button-container {
     position: absolute;
     bottom: 20%;
     left: 50%;
@@ -127,7 +129,7 @@ header {
     z-index: 2;
   }
 
-  .btn {
+  &__button {
     @include button($primary-color, #fff);
 
     &:hover {
@@ -140,19 +142,6 @@ header {
       transform: translateY(0);
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
-  }
-
-  .container {
-    z-index: 1;
-    position: relative;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1rem;
   }
 }
 
@@ -170,17 +159,17 @@ header {
   background-color: $bg-color;
   padding: 40px 0;
 
-  h2 {
+  &__title {
     text-align: center;
     margin-bottom: 30px;
   }
 
-  .artist-grid {
+  &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 
-    .artist-card {
+    &__card {
       text-align: center;
       cursor: pointer;
       @include transition(transform);
@@ -189,16 +178,16 @@ header {
         transform: scale(1.05);
       }
 
-      img {
+      &__image {
         width: 100%;
         border-radius: 5px;
       }
 
-      h3 {
+      &__name {
         margin: 10px 0;
       }
 
-      p {
+      &__genre {
         color: $primary-color;
       }
     }
@@ -206,7 +195,7 @@ header {
 }
 
 /* Footer */
-footer {
+.footer {
   text-align: center;
   padding: 20px;
   background-color: $primary-color;
@@ -214,7 +203,57 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Keyframe Animations */
+/* Ticket Option */
+.ticket-option {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--light-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: calc(33.333% - 20px);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &--hovered {
+    transform: scale(1.05);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  }
+
+  &__description {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  &__buy-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+
+    &:hover {
+      background-color: var(--secondary-color);
+      transform: scale(1.1);
+    }
+  }
+}
+
+/* Animations */
 @keyframes rotation {
   from {
     transform: rotate(0deg);
