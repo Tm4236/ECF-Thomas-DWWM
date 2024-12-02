@@ -207,7 +207,7 @@ header nav ul li a:hover {
 /* Header */
 header {
   position: relative;
-  background-image: url("/images/festival-techno-la-teste-banniere.jpg");
+  background-image: url("./images/festival-techno-la-teste-banniere.jpg");
   background-size: cover;
   background-position: center;
   height: 200px;
