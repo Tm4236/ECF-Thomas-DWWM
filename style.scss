@@ -1,0 +1,240 @@
+/* Variables */
+$font-family: Arial, sans-serif;
+$bg-color: #2e2a39;
+$text-color: #e8ffff;
+$primary-color: #fd55b7;
+$hover-color: #83feff;
+$transition-duration: 0.3s;
+
+/* Mixin pour les transitions */
+@mixin transition(
+  $property,
+  $duration: $transition-duration,
+  $timing-function: ease
+) {
+  transition: $property $duration $timing-function;
+}
+
+/* Mixin pour les boutons */
+@mixin button($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  @include transition(all);
+}
+
+/* General Styles */
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+/* Header */
+header {
+  position: relative;
+  background-image: url("./images/festival-techno-la-teste-banniere.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+
+  .logo img {
+    width: auto;
+    height: 90px;
+    animation: rotation 5s infinite linear;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .navbar {
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin: 0 20px;
+      }
+
+      a {
+        @include button($primary-color, #fff);
+        @include transition(background-color);
+        &:hover {
+          background-color: $hover-color;
+          color: $bg-color;
+          transform: translateY(-5px);
+        }
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carousel {
+    display: flex;
+    width: 300%;
+    animation: slide 15s ease-in-out infinite;
+
+    .carousel-image {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+  }
+
+  .carousel-button-container {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .btn {
+    @include button($primary-color, #fff);
+
+    &:hover {
+      background-color: $hover-color;
+      color: $bg-color;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .container {
+    z-index: 1;
+    position: relative;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.festival-poster {
+  display: block;
+  margin: 40px auto;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Artists Section */
+.artists {
+  background-color: $bg-color;
+  padding: 40px 0;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .artist-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    .artist-card {
+      text-align: center;
+      cursor: pointer;
+      @include transition(transform);
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+
+      h3 {
+        margin: 10px 0;
+      }
+
+      p {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: $primary-color;
+  color: $bg-color;
+  font-size: 0.9rem;
+}
+
+/* Keyframe Animations */
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-100vw);
+  }
+  67% {
+    transform: translateX(-200vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
